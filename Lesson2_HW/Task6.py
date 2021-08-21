@@ -27,7 +27,7 @@ while command != "stop":
         resulting_list.append((current_index, get_wares_data()))
         current_index += 1
     if command == "stop":
-        print(resulting_list)
+        print("Сформированный список кортежей", resulting_list)
         analytics = {
             "название": [],
             "цена": [],
@@ -40,6 +40,6 @@ while command != "stop":
             analytics["цена"].append(current_data["цена"])
             analytics["количество"].append(current_data["количество"])
             analytics["eд"].append(current_data["eд"])
-        print(analytics)
+        print("Отчет", analytics)
 
 
