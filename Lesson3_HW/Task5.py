@@ -13,10 +13,10 @@ def sum_from_input():
     while not stop_command:
         user_input = input("Пожалуйста, введите строку чисел, разделенных пробелом. Чтобы закончить, напишите stop >>> ")
         input_list = user_input.split(" ")
-        for i in input_list:
-            if i != "stop":
+        for element in input_list:
+            if element != "stop":
                 try:
-                    rolling_sum += int(i)
+                    rolling_sum += int(element)
                 except ValueError:
                     pass
             else:
