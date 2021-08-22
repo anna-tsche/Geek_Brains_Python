@@ -7,6 +7,7 @@ def my_func(*arguments):
 
 
 # Ниже поиск минимального элемента реализован циклом, я хотела написать без использования встроенной фиункции min().
+# Это должно быть быстрее, чем решение с сортировкой.
 def my_func_alternative(*arguments):
     min_element = arguments[0]
     sum_elements = min_element
