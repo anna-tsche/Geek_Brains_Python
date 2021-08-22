@@ -15,8 +15,10 @@ def my_func_operator(x, y):
     return x ** y
 
 
-print(my_func_algorithm(17, -7))
-print(my_func_operator(17, -7))
+real_number = 17
+negative_number = -7
 
+print(my_func_algorithm(real_number, negative_number))
+print(my_func_operator(real_number, negative_number))
 
-print(pow(17, -7))
+print(pow(real_number, negative_number))
