@@ -37,7 +37,7 @@ def capitalize_all_words(sentence):
     return " ".join(capitalized_list)
 
 
-word_input = input("Введите слово латиницей >>> ")
-sentence_input = input("Введите предложение латиницей >>> ")
+word_input = input("Введите слово латиницей >>> ").strip()
+sentence_input = input("Введите предложение латиницей >>> ").strip()
 print(capitalize_word(word_input))
 print(capitalize_all_words(sentence_input))
