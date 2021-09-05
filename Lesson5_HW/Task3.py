@@ -17,3 +17,5 @@ for line in salary_lines:
 
 print(
     f"Сотрудники с окдадом менее 20 тыс. руб.: {', '.join(low_earners)}. \nСредняя величина дохода сотрудников {round(running_total / running_count, 2)} руб.")
+
+salary_file.close()
