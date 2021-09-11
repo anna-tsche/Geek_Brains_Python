@@ -8,20 +8,18 @@
 
 
 class Worker:
-    name: str
-    surname: str
-    position: str
+
+    def __init__(self, name, surname, position):
+        self.name = name
+        self.surname = surname
+        self.position = position
+
     _income = [{"name_surname": "Иван Иванов", "wage": 100, "bonus": 10},
                {"name_surname": "Петр Петров", "wage": 110, "bonus": 0},
                {"name_surname": "Иван Сидоров", "wage": 90, "bonus": 100}]
 
 
 class Position(Worker):
-    def __init__(self, name, surname, position, income=None):
-        self.name = name
-        self.surname = surname
-        self.position = position
-        self._income = self.get_total_income()
 
     def get_full_name(self):
         return f"{self.name} {self.surname}"
@@ -31,17 +29,13 @@ class Position(Worker):
             if employee["name_surname"] == self.get_full_name():
                 return employee["wage"] + employee["bonus"]
 
-    @property
-    def income(self):
-        return self._income
-
 
 ivanov = Position("Иван", "Иванов", "Стажер")
 sidorov = Position("Иван", "Сидоров", "Генеральный директор")
 
 
 def get_person_info(employee):
-    print(f"{employee.get_full_name()}, {employee.position}, зарплата с учетом премии {employee.income}")
+    print(f"{employee.get_full_name()}, {employee.position}, зарплата с учетом премии {employee.get_total_income()}.")
 
 
 get_person_info(ivanov)
