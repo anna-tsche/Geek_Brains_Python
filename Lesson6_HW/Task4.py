@@ -9,9 +9,11 @@
 
 
 class Car:
-    speed: float
-    color: str
-    name: str
+    def __init__(self, speed, color, name):
+        self.speed = speed
+        self.color = color
+        self.name = name
+
     is_police: bool
 
     def go(self):
@@ -31,11 +33,7 @@ class Car:
 
 
 class TownCar(Car):
-    def __init__(self, speed, color, name):
-        self.speed = speed
-        self.color = color
-        self.name = name
-        self.is_police = False
+    is_police = False
 
     def show_speed(self):
         if self.speed > 60:
@@ -45,19 +43,11 @@ class TownCar(Car):
 
 
 class SportCar(Car):
-    def __init__(self, speed, color, name):
-        self.speed = speed
-        self.color = color
-        self.name = name
-        self.is_police = False
+    is_police = False
 
 
 class WorkCar(Car):
-    def __init__(self, speed, color, name):
-        self.speed = speed
-        self.color = color
-        self.name = name
-        self.is_police = False
+    is_police = False
 
     def show_speed(self):
         if self.speed > 40:
@@ -67,11 +57,7 @@ class WorkCar(Car):
 
 
 class PoliceCar(Car):
-    def __init__(self, speed, color, name):
-        self.speed = speed
-        self.color = color
-        self.name = name
-        self.is_police = True
+    is_police = True
 
 
 porsche = SportCar(200, "красный", "Porsche")
@@ -80,7 +66,7 @@ kia = WorkCar(80, "красный", "Kia")
 mercedes = PoliceCar(130, "черный", "Mercedes")
 
 
-print(mercedes.go())
-print(f"Цвет {kia.name} - {kia.color}")
-print(f"{skoda.name} полицейская машина: {skoda.is_police}")
+print(porsche.go())
+print(f"Цвет {mercedes.name} - {mercedes.color}.")
+print(f"{skoda.name} полицейская машина: {skoda.is_police}.")
 print(kia.show_speed())
