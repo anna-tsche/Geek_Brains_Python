@@ -10,23 +10,26 @@
 # проверить на практике работу декоратора @property.
 
 
+from abc import ABC, abstractmethod
+
 class Clothing:
 
     def __init__(self, name: str):
         self.name = name
 
     @property
-    def fabric_usage(self):
-        return f"Расход ткани {self.fabric_usage}"
+    @abstractmethod
+    def fabric_usage(self) -> float:
+        pass
 
 
 class Coat(Clothing):
 
     def __init__(self, name: str, size: int):
         super().__init__(name)
-        self.name = name
         self.size = size
 
+    @property
     def fabric_usage(self):
         return round(self.size/6.5 + 0.5, 2)
 
@@ -35,9 +38,9 @@ class Suit(Clothing):
 
     def __init__(self, name: str, height: float):
         super().__init__(name)
-        self.name = name
         self.height = height
 
+    @property
     def fabric_usage(self):
         return round(2*self.height + 0.3, 2)
 
@@ -45,5 +48,5 @@ class Suit(Clothing):
 coat_1 = Coat("Пальто", 10)
 suit_1 = Suit("Рабочий костюм", 160)
 
-print(coat_1.fabric_usage())
-print(suit_1.fabric_usage())
+print(coat_1.fabric_usage)
+print(suit_1.fabric_usage)
