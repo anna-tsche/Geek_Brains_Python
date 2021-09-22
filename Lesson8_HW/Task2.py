@@ -11,12 +11,16 @@ class CustomZeroDivisionError(Exception):
 
 
 def try_division():
-    numerator = int(input("Введите числитель >>> "))
-    denominator = int(input("Введите знаменатель >>> "))
-    if denominator == 0:
-        raise CustomZeroDivisionError
-    result = float(numerator / denominator)
-    print(f"Результат деления: {numerator} на {denominator}: {result}")
+    try:
+        numerator = int(input("Введите числитель >>> "))
+        denominator = int(input("Введите знаменатель >>> "))
+        if denominator == 0:
+            raise CustomZeroDivisionError
+        result = float(numerator / denominator)
+        print(f"Результат деления: {numerator} на {denominator}: {result}")
+    except CustomZeroDivisionError as error_division:
+        print(error_division)
+
 
 
 try_division()
