@@ -22,5 +22,4 @@ def try_division():
         print(error_division)
 
 
-
 try_division()
